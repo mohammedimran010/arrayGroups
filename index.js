@@ -22,7 +22,14 @@ const groupArrayElements = (array, chunk_size) => {
   return groups;
 };
 
-// USAGE
-const result = groupArrayElements([1, 2, 3, 4, 5], 3);
-console.log(result);
-// Outputs : [ [1,2] , [3,4] ,[5] ]
+document.getElementById("myBtn").addEventListener("click", function () {
+  const srcArray = [1, 2, 3, 4, 5];
+  const srcChunks = 3;
+  // USAGE
+  const result = groupArrayElements(srcArray, srcChunks);
+  // Outputs : [ [1,2] , [3,4] ,[5] ]
+  // console.log(result);
+  document.getElementById("array").innerHTML = srcArray;
+  document.getElementById("chunks").innerHTML = srcChunks;
+  document.getElementById("result").innerHTML = JSON.stringify(result);
+});
