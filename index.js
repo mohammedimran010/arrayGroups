@@ -24,12 +24,17 @@ const groupArrayElements = (array, chunk_size) => {
 
 document.getElementById("myBtn").addEventListener("click", function () {
   const srcArray = [1, 2, 3, 4, 5];
+  document.getElementById("array").innerHTML = JSON.stringify(
+    srcArray,
+    null,
+    4
+  );
+
   const srcChunks = 3;
   // USAGE
   const result = groupArrayElements(srcArray, srcChunks);
   // Outputs : [ [1,2] , [3,4] ,[5] ]
   // console.log(result);
-  document.getElementById("array").innerHTML = srcArray;
   document.getElementById("chunks").innerHTML = srcChunks;
-  document.getElementById("result").innerHTML = JSON.stringify(result);
+  document.getElementById("result").innerHTML = JSON.stringify(result, null, 4);
 });
